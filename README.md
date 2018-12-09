@@ -1,2 +1,2 @@
 # yarnfuncs
-yet another roman numbers encoder/decoder functions
+Yet another roman numbers encoder/decoder functions sampler.
