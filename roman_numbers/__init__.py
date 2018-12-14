@@ -62,7 +62,7 @@ def decimal_to_roman(decimal_number):
     return result if decimal_number == 0 and result != NOTHING else None
 
 
-__all_ = ["roman_to_decimal"]
+__all__ = 'roman_to_decimal decimal_to_roman'.split()
 
 
 # last line of code
