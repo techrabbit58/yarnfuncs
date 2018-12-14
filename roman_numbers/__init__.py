@@ -6,7 +6,7 @@ from collections import namedtuple
 RomanCodeRule = namedtuple('RomanCodeRule', 'max_repeats value ascendant descendant')
 
 
-NOTHING = ''
+EMPTY_STRING = ''
 
 code_rule = {
     'M': RomanCodeRule(3, 1000, 'CM', 'CM'),
@@ -33,7 +33,7 @@ def roman_to_decimal(roman_number):
         while repeats_granted > 0:
             if roman_number.startswith(roman_digit):
                 result += code_rule[roman_digit].value
-                roman_number = roman_number.replace(roman_digit, NOTHING, 1)
+                roman_number = roman_number.replace(roman_digit, EMPTY_STRING, 1)
                 repeats_granted -= 1
             else:
                 roman_digit = code_rule[roman_digit].descendant
@@ -59,7 +59,7 @@ def decimal_to_roman(decimal_number):
                 break
         else:
             roman_digit = code_rule[roman_digit].ascendant
-    return result if decimal_number == 0 and result != NOTHING else None
+    return result if decimal_number == 0 and result != EMPTY_STRING else None
 
 
 __all__ = 'roman_to_decimal decimal_to_roman'.split()
