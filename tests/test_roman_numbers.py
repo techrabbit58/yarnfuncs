@@ -54,12 +54,14 @@ test_cases = [
 ]
 
 
-@pytest.mark.parametrize('roman_number, decimal_number', [tc for tc in test_cases if not tc[0] is None])
+@pytest.mark.parametrize('roman_number, decimal_number',
+                         [tc for tc in test_cases if not tc[0] is None])
 def test_roman_to_decimal(roman_number, decimal_number):
     assert roman_to_decimal(roman_number) == decimal_number
 
 
-@pytest.mark.parametrize('roman_number, decimal_number', [tc for tc in test_cases if not tc[1] is None])
+@pytest.mark.parametrize('roman_number, decimal_number',
+                         [tc for tc in test_cases if not tc[1] is None])
 def test_decimal_to_roman(roman_number, decimal_number):
     assert decimal_to_roman(decimal_number) == roman_number
 

@@ -2,9 +2,7 @@
 
 from collections import namedtuple
 
-
 RomanCodeRule = namedtuple('RomanCodeRule', 'max_repeats value ascendant descendant')
-
 
 EMPTY_STRING = ''
 
@@ -72,7 +70,6 @@ def decimal_to_roman(decimal_number):
         else:
             roman_digit = code_rule[roman_digit].ascendant
     return result if decimal_number == 0 and result != EMPTY_STRING else None
-
 
 
 __all__ = 'roman_to_decimal relaxed_roman_to_decimal decimal_to_roman'.split()
