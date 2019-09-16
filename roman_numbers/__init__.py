@@ -41,18 +41,6 @@ def roman_to_decimal(roman_number):
     return result if len(roman_number) == 0 else None
 
 
-def relaxed_roman_to_decimal(roman_number):
-    result = 0
-    roman_digits = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
-    while not len(roman_digits) == 0:
-        roman_digit = roman_digits[0]
-        while roman_number.startswith(roman_digit):
-            roman_number = roman_number[len(roman_digit):]
-            result += code_rule[roman_digit].value
-        roman_digits = roman_digits[1:]
-    return result
-
-
 def decimal_to_roman(decimal_number):
     result = ''
     roman_digit = 'M'
@@ -72,6 +60,6 @@ def decimal_to_roman(decimal_number):
     return result if decimal_number == 0 and result != EMPTY_STRING else None
 
 
-__all__ = 'roman_to_decimal relaxed_roman_to_decimal decimal_to_roman'.split()
+__all__ = 'roman_to_decimal decimal_to_roman'.split()
 
 # last line of code
